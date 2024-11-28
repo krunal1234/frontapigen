@@ -20,7 +20,7 @@ const Home = () => {
         <h1 className="text-4xl font-bold text-center mb-4">All In One Generation</h1>
         <p className="text-lg text-center mb-8">Leverage the power of AI for seamless content creation, social media management, and more.</p>
         <div className="flex justify-center">
-          <Image src="/image-creator-T02_juice.webp" alt="AI Illustration" width={400} height={300} className="rounded-lg shadow-lg" />
+          <Image src="/hero-image.jpg" alt="AI Illustration" width={400} height={300} className="rounded-lg shadow-lg" />
         </div>
       </section>
 
