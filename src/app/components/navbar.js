@@ -28,7 +28,7 @@ const Navbar = () => {
       <nav className="p-4 bg-white">
         <div className="container mx-auto flex justify-between items-center">
           <div className="text-dark text-2xl font-bold">
-            <Link href="/">Alinbox</Link>
+          <Link href="/">{process.env.NEXT_PUBLIC_PROJECT_NAME}</Link>
           </div>
           <button
             className="text-dark lg:hidden"
