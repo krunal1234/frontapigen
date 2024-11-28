@@ -30,7 +30,6 @@ const UserSettings = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       const userData = await fetchData("/api/profile", "GET");
-      debugger;
       if (userData.data) {
         setUserInfo(userData.data[0]);
       }
@@ -46,8 +45,10 @@ const UserSettings = () => {
 
   const handleGenerateApiKey = async () => {
     const response = await fetchData("/api/apiKeys", "POST");
+    debugger;
     if (response.api_key) {
       setNewApiKey(response.api_key);
+      setApiKeys([...apiKeys, { api_key : response.api_key}]);
       setShowModal(true);
     }
   };
@@ -61,7 +62,6 @@ const UserSettings = () => {
 
   const handleSaveUserInfo = async () => {
     const response = await fetchData("/api/profile", "PUT", userInfo);
-    debugger;
     if (response.success) {
       alert("User info updated successfully");
     } else {
