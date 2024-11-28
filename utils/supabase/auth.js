@@ -94,13 +94,13 @@ const auth = {
     return data;
   },
 
-  storeApiKey: async (userId, apiKey) => {
+  storeApiKey: async (user_id, api_key) => {
     try {
-      let { user_id, api_key} = data;
-      user_id = userId;
-      api_key = apiKey;
       const supabase = createClient();
-      const { data, error } = await supabase.from("api_keys").insert(data);
+      const { data, error } = await supabase.from("api_keys").insert({
+        user_id : user_id,
+        api_key : api_key
+      });
 
       if (error) {
         throw new Error(error.message);
